@@ -14,11 +14,56 @@
         
         body {
             font-family: 'Cabinet_Grotesk', sans-serif;
+            
         }
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        .main-title{
+            font-weight: 600;
+            font-size: 64px;
+        }
+        .div-1{
+            display: flex;
+            min-height: 100vh;
+            background-color: firebrick;
+        }
+        .div-1-1{
+            background-color: beige;
+            flex:1.15;
+            background: linear-gradient(
+                180deg,
+                #4EB6E9 0%,
+                #38A3DB 24%,
+                #236AAC 64%,
+                #236AAC 78%
+            );
+        }
+        .div-1-2{
+            background-color:cornflowerblue;
+            flex:1;
+        }
+
         
     </style>
 </head>
 <body>
+
+    <div class="div-1">
+
+        <div class="div-1-1">
+             <h1 class="main-title">Deerwalk MUN 3.0</h1>
+        </div>
+
+        <div class="div-1-2">
+            <h1>Login</h1>
+
+        </div>
+
+    </div>
    
 </body>
 </html>
