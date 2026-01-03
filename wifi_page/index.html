@@ -59,6 +59,9 @@
             display:flex;
             flex-direction: column;
             align-items: center;
+            border:solid;
+            border-width: 5px;
+            border-color: #F6C900;
         }
         .login-title{
             margin-top: 225px;
@@ -118,6 +121,46 @@
             opacity: 0.7;
         }
 
+        .counter__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .timing__container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .timing__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timing__box__number {
+            font-size: 60px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .timing__box__text {
+            color: white;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .timing__box__colon {
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+        }
+
 
         
     </style>
@@ -134,6 +177,35 @@
             eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
         }
     }
+
+
+        const targetDate = new Date("2026-01-26T09:00:00").getTime(); 
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const timeRemaining = targetDate - now;
+            
+            if (timeRemaining <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days < 10 ? `0${days}` : days;
+                document.getElementById('hours').textContent = hours < 10 ? `0${hours}` : hours;
+                document.getElementById('minutes').textContent = minutes < 10 ? `0${minutes}` : minutes;
+                document.getElementById('seconds').textContent = seconds < 10 ? `0${seconds}` : seconds;
+            }
+        };
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
 </script>
 </head>
 <body>
@@ -143,6 +215,30 @@
         <div class="div-1-1">
             <img src="assets/logo/Vector.svg" alt="Logo" class="logo">
              <h1 class="main-title">Deerwalk MUN <span>3.0</span></h1>
+
+         <div class="counter__container">
+        <div class="timing__container">
+            <div class="timing__box">
+                <div class="timing__box__number" id="days">00</div>
+                <div class="timing__box__text">Days</div>
+        </div>
+        <div class="timing__box__colon">:</div>
+           <div class="timing__box">
+             <div class="timing__box__number" id="hours">00</div>
+                <div class="timing__box__text">Hours</div>
+        </div>
+        <div class="timing__box__colon">:</div>
+            <div class="timing__box">
+                <div class="timing__box__number" id="minutes">00</div>
+            <div class="timing__box__text">Minutes</div>
+        </div>
+        <div class="timing__box__colon">:</div>
+        <div class="timing__box">
+            <div class="timing__box__number" id="seconds">00</div>
+            <div class="timing__box__text">Seconds</div>
+        </div>
+        </div>
+    </div>
         </div>
 
         <div class="div-1-2">
@@ -153,15 +249,15 @@
                 <input type="text" class="input-holder"></input>
                 <br>
                <label style="font-size: 20px; color:#236AAC;">Password</label>
-<div style="position: relative;">
-    <input type="password" class="input-holder" id="passwordInput">
-    <button type="button" class="eye-button" onclick="togglePassword()">
-        <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#236AAC" stroke-width="2">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-            <circle cx="12" cy="12" r="3"></circle>
-        </svg>
-    </button>
-</div>
+                <div style="position: relative;">
+                    <input type="password" class="input-holder" id="passwordInput">
+                        <button type="button" class="eye-button" onclick="togglePassword()">
+                        <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#236AAC" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        </button>
+                </div>
 
                 <div class="login-button">Login</div>
             </div>
