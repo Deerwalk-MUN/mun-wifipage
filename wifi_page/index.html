@@ -26,6 +26,7 @@
             font-weight: 600;
             font-size: 64px;
             color:white;
+            margin-top: -100px;
         }
         .div-1{
             display: flex;
@@ -84,21 +85,56 @@
             margin-top: 20px;
             width: 513px;
             height:74px;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 20px;
             background-color: #236AAC;
             color:white;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid;
+            border-color:#38A3DB;
             
         }
         .login-button:hover{
             background-color: #F6C900;
             color:black;
-            transition:  0.8s ease;
+            transition:  0.6s ease;
+            border-color: #F6C900;
+        }
+        .eye-button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .eye-button:hover {
+            opacity: 0.7;
         }
 
 
         
     </style>
+    <script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('passwordInput');
+        const eyeIcon = document.getElementById('eyeIcon');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            eyeIcon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>';
+        } else {
+            passwordInput.type = 'password';
+            eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
+        }
+    }
+</script>
 </head>
 <body>
 
@@ -116,10 +152,18 @@
                 <label style="font-size: 20px; color:#236AAC;">Username</label>
                 <input type="text" class="input-holder"></input>
                 <br>
-                <label style="font-size: 20px; color:#236AAC;">Password</label>
-                <input type="password" class="input-holder"></input>
+               <label style="font-size: 20px; color:#236AAC;">Password</label>
+<div style="position: relative;">
+    <input type="password" class="input-holder" id="passwordInput">
+    <button type="button" class="eye-button" onclick="togglePassword()">
+        <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#236AAC" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+    </button>
+</div>
 
-                <button class="login-button">Login</button>
+                <div class="login-button">Login</div>
             </div>
             
 
