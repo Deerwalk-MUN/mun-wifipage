@@ -25,11 +25,12 @@
         .main-title{
             font-weight: 600;
             font-size: 64px;
+            color:white;
         }
         .div-1{
             display: flex;
             min-height: 100vh;
-            background-color: firebrick;
+           
         }
         .div-1-1{
             background-color: beige;
@@ -41,11 +42,60 @@
                 #236AAC 64%,
                 #236AAC 78%
             );
+            display: flex;
+            
+            align-items: center;
+            flex-direction: column;
+        }
+        .logo{
+             width: 468px;  
+             height: auto;
+             margin-top: 10px;
         }
         .div-1-2{
-            background-color:cornflowerblue;
+            background-color:white;
             flex:1;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
         }
+        .login-title{
+            margin-top: 225px;
+            font-size: 24px;
+            color:#236AAC;
+        }
+        span{
+            color:#F6C900;
+        }
+        .input-fields{
+            display: flex;
+            flex-direction: column;
+        }
+        .input-holder{
+            width:513px;
+            height: 47px;
+            border:solid;
+            border-color: #236AAC;
+            border-radius: 8px;
+            font-size: 15px;
+            padding:5px;
+        }
+        .login-button{
+            margin-top: 20px;
+            width: 513px;
+            height:74px;
+            border-radius: 8px;
+            font-size: 20px;
+            background-color: #236AAC;
+            color:white;
+            
+        }
+        .login-button:hover{
+            background-color: #F6C900;
+            color:black;
+            transition:  0.8s ease;
+        }
+
 
         
     </style>
@@ -55,11 +105,23 @@
     <div class="div-1">
 
         <div class="div-1-1">
-             <h1 class="main-title">Deerwalk MUN 3.0</h1>
+            <img src="assets/logo/Vector.svg" alt="Logo" class="logo">
+             <h1 class="main-title">Deerwalk MUN <span>3.0</span></h1>
         </div>
 
         <div class="div-1-2">
-            <h1>Login</h1>
+            <h1 class="login-title">Connect To WiFi</h1>
+            <br><br>
+            <div class="input-fields">
+                <label style="font-size: 20px; color:#236AAC;">Username</label>
+                <input type="text" class="input-holder"></input>
+                <br>
+                <label style="font-size: 20px; color:#236AAC;">Password</label>
+                <input type="password" class="input-holder"></input>
+
+                <button class="login-button">Login</button>
+            </div>
+            
 
         </div>
 
