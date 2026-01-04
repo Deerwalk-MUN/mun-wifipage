@@ -6,23 +6,21 @@
     <title>MUN 3.0</title>
     <style>
         @font-face {
-            font-family: 'Cabinet_Grotesk';
+               font-family: 'Cabinet_Grotesk';
             src: url('assets/fonts/Cabinet_Grotesk/CabinetGrotesk-Variable.woff2') format('woff2');
             font-weight: 100 900;
-            font-style: normal;
+                  font-style: normal;
         }
         
         * {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+               padding: 0;
+              box-sizing: border-box;
+        }   
 
         body {
             font-family: 'Cabinet_Grotesk', sans-serif;
         }
-
-        /* Desktop Layout (default) */
         .main-title {
             font-weight: 600;
             font-size: 64px;
@@ -42,10 +40,10 @@
                 #38A3DB 24%,
                 #236AAC 64%,
                 #236AAC 78%
-            );
+             );
             flex: 1.15;
             display: flex;
-            align-items: center;
+              align-items: center;
             flex-direction: column;
         }
 
@@ -104,26 +102,26 @@
             justify-content: center;
             align-items: center;
             border: solid;
-            border-color: #38A3DB;
+                border-color: #38A3DB;
             cursor: pointer;
         }
 
         .login-button:hover {
             background-color: #F6C900;
-            color: black;
+               color: black;
             transition: 0.6s ease;
-            border-color: black;
+                   border-color: black;
         }
 
         .eye-button {
             position: absolute;
             right: 10px;
-            top: 50%;
+               top: 50%;
             transform: translateY(-50%);
             background: none;
             border: none;
             cursor: pointer;
-            padding: 5px;
+                    padding: 5px;
         }
 
         .eye-button:hover {
@@ -132,7 +130,7 @@
 
         .counter__container {
             display: flex;
-            flex-direction: column;
+                flex-direction: column;
             justify-content: center;
             align-items: center;
             margin-top: 50px;
@@ -141,13 +139,13 @@
         .timing__container {
             display: flex;
             flex-direction: row;
-            align-items: center;
+              align-items: center;
             gap: 20px;
         }
 
         .timing__box {
-            display: flex;
-            flex-direction: column;
+                display: flex;
+                flex-direction: column;
             align-items: center;
         }
 
@@ -228,12 +226,148 @@
                 width: 450px;
                 height: 60px;
             }
+
+            @media (max-width: 767px) {
+            .div-1 {
+                flex-direction: column;
+                
+            }
+
+            .div-1-1 {
+                min-height: 30vh;
+                padding: 15px;
+            }
+
+            .logo {
+                width: 220px;
+                margin-top: 5px;
+            }
+
+            .main-title {
+                font-size: 28px;
+                margin-top: -25px;
+                text-align: center;
+            }
+
+            .counter__container {
+                margin-top: 20px;
+            }
+
+            .timing__container {
+                gap: 10px;
+            }
+
+            .timing__box__number {
+                font-size: 28px;
+            }
+
+            .timing__box__text {
+                font-size: 12px;
+            }
+
+            .timing__box__colon {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .div-1-2 {
+                min-height: 70vh;
+                border-width: 5px 0 0 0;
+                padding: 30px 20px;
+                justify-content: flex-start;
+            }
+
+            .login-title {
+                margin-top: 30px;
+                font-size: 24px;
+            }
+
+            .input-fields {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .input-fields label {
+                font-size: 18px !important;
+            }
+
+            .input-holder {
+                width: 100%;
+                max-width: 400px;
+                height: 45px;
+                font-size: 18px;
+            }
+
+            .login-button {
+                width: 100%;
+                max-width: 400px;
+                height: 55px;
+                font-size: 18px;
+                margin-top: 15px;
+            }
+        }
+
+        
+
+
+        @media (max-width: 480px) {
+
+            .div-1-1{   
+                     min-height: 30vh;
+            }
+            .div-1-2{
+                min-height: 70vh;
+            }
+            .logo {
+                width: 200px;
+                margin-top: -20px;
+            }
+
+            .main-title {
+                font-size: 22px;
+                margin-top: -30px;
+            }
+
+            .timing__box__number {
+                font-size: 24px;
+            }
+
+            .timing__box__text {
+                font-size: 10px;
+            }
+
+                .timing__box__colon {
+                    font-size: 20px;
+            }
+
+            .login-title {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+
+            .input-fields {
+                max-width: 320px;
+                
+            }
+
+            .input-holder {
+                max-width: 320px;
+                height: 42px;
+                font-size: 16px;
+            }
+
+            .login-button {
+                max-width: 320px;
+                height: 50px;
+                font-size: 16px;
+            }
+        }
         }
 
         
     </style>
     <script>
-        function togglePassword() {
+            function togglePassword() {
             const passwordInput = document.getElementById('passwordInput');
             const eyeIcon = document.getElementById('eyeIcon');
             
@@ -250,23 +384,23 @@
 
         const updateCountdown = () => {
             const now = new Date().getTime();
-            const timeRemaining = targetDate - now;
+                const timeRemaining = targetDate - now;
             
             if (timeRemaining <= 0) {
                 document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
+                     document.getElementById('hours').textContent = '00';
+                     document.getElementById('minutes').textContent = '00';
                 document.getElementById('seconds').textContent = '00';
             } else {
                 const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-                
+
                 document.getElementById('days').textContent = days < 10 ? `0${days}` : days;
-                document.getElementById('hours').textContent = hours < 10 ? `0${hours}` : hours;
+                     document.getElementById('hours').textContent = hours < 10 ? `0${hours}` : hours;
                 document.getElementById('minutes').textContent = minutes < 10 ? `0${minutes}` : minutes;
-                document.getElementById('seconds').textContent = seconds < 10 ? `0${seconds}` : seconds;
+                 document.getElementById('seconds').textContent = seconds < 10 ? `0${seconds}` : seconds;
             }
         };
 
@@ -279,10 +413,10 @@
         <div class="div-1-1">
             <img src="assets/logo/Vector.svg" alt="Logo" class="logo">
             <h1 class="main-title">Deerwalk MUN <span>3.0</span></h1>
-
-            <div class="counter__container">
+                
+                <div class="counter__container">
                 <div class="timing__container">
-                    <div class="timing__box">
+                     <div class="timing__box">
                         <div class="timing__box__number" id="days">00</div>
                         <div class="timing__box__text">Days</div>
                     </div>
@@ -297,7 +431,7 @@
                         <div class="timing__box__text">Minutes</div>
                     </div>
                     <div class="timing__box__colon">:</div>
-                    <div class="timing__box">
+                     <div class="timing__box">
                         <div class="timing__box__number" id="seconds">00</div>
                         <div class="timing__box__text">Seconds</div>
                     </div>
@@ -306,24 +440,24 @@
         </div>
 
         <div class="div-1-2">
-            <h1 class="login-title">Connect To WiFi</h1>
-            <br><br>
+                <h1 class="login-title">Connect To WiFi</h1>
+                   <br><br>
             <div class="input-fields">
                 <label style="font-size: 20px; color:#236AAC;">Username</label>
                 <input type="text" class="input-holder">
-                <br>
+                 <br>
                 <label style="font-size: 20px; color:#236AAC;">Password</label>
-                <div style="position: relative;">
+                    <div style="position: relative;">
                     <input type="password" class="input-holder" id="passwordInput">
                     <button type="button" class="eye-button" onclick="togglePassword()">
-                        <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#236AAC" stroke-width="2">
+                         <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#236AAC" stroke-width="2">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
                         </svg>
                     </button>
                 </div>
 
-                <div class="login-button">Login</div>
+                    <div class="login-button">Login</div>
             </div>
         </div>
     </div>
