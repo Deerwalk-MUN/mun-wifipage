@@ -12,30 +12,30 @@
             font-style: normal;
         }
         
-        body {
-            font-family: 'Cabinet_Grotesk', sans-serif;
-            
-        }
-        *{
-            margin:0;
-            padding:0;
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        .main-title{
+        body {
+            font-family: 'Cabinet_Grotesk', sans-serif;
+        }
+
+        /* Desktop Layout (default) */
+        .main-title {
             font-weight: 600;
             font-size: 64px;
-            color:white;
+            color: white;
             margin-top: -100px;
         }
-        .div-1{
+
+        .div-1 {
             display: flex;
             min-height: 100vh;
-           
         }
-        .div-1-1{
-            background-color: beige;
-            flex:1.15;
+
+        .div-1-1 {
             background: linear-gradient(
                 180deg,
                 #4EB6E9 0%,
@@ -43,69 +43,78 @@
                 #236AAC 64%,
                 #236AAC 78%
             );
+            flex: 1.15;
             display: flex;
-            
             align-items: center;
             flex-direction: column;
         }
-        .logo{
-             width: 468px;  
-             height: auto;
-             margin-top: 10px;
+
+        .logo {
+            width: 468px;
+            height: auto;
+            margin-top: 10px;
         }
-        .div-1-2{
-            background-color:white;
-            flex:1;
-            display:flex;
+
+        .div-1-2 {
+            background-color: white;
+            flex: 1;
+            display: flex;
             flex-direction: column;
             align-items: center;
-            border:solid;
+            border: solid;
             border-width: 5px;
             border-color: #F6C900;
         }
-        .login-title{
+
+        .login-title {
             margin-top: 225px;
             font-size: 24px;
-            color:#236AAC;
+            color: #236AAC;
         }
-        span{
-            color:#F6C900;
+
+        span {
+            color: #F6C900;
         }
-        .input-fields{
+
+        .input-fields {
             display: flex;
             flex-direction: column;
         }
-        .input-holder{
-            width:513px;
+
+        .input-holder {
+            width: 513px;
             height: 47px;
-            border:solid;
+            border: solid;
             border-color: #236AAC;
             border-radius: 8px;
             font-size: 15px;
-            padding:5px;
+            padding: 5px;
         }
-        .login-button{
+
+        .login-button {
             margin-top: 20px;
             width: 513px;
-            height:74px;
+            height: 74px;
             border-radius: 10px;
             font-size: 20px;
             background-color: #236AAC;
-            color:white;
+            color: white;
             font-weight: 500;
             display: flex;
             justify-content: center;
             align-items: center;
             border: solid;
-            border-color:#38A3DB;
-            
+            border-color: #38A3DB;
+            cursor: pointer;
         }
-        .login-button:hover{
-            background-color:#F6C900;
-            color:black;
-            transition:  0.6s ease;
+
+        .login-button:hover {
+            background-color: #F6C900;
+            color: black;
+            transition: 0.6s ease;
             border-color: black;
         }
+
         .eye-button {
             position: absolute;
             right: 10px;
@@ -161,23 +170,80 @@
             margin-bottom: 30px;
         }
 
+        
+        @media (max-width: 1024px) {
+            .div-1 {
+                flex-direction: column;
+            }
+
+            .div-1-1 {
+                min-height: 50vh;
+                padding: 20px;
+            }
+
+            .logo {
+                width: 300px;
+                margin-top: 20px;
+            }
+
+            .main-title {
+                font-size: 48px;
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .counter__container {
+                margin-top: 30px;
+            }
+
+            .timing__box__number {
+                font-size: 40px;
+            }
+
+            .timing__box__text {
+                font-size: 16px;
+            }
+
+            .timing__box__colon {
+                font-size: 35px;
+            }
+
+            .div-1-2 {
+                min-height: 50vh;
+                border-width: 5px 0 0 0;
+                padding: 40px 20px;
+            }
+
+            .login-title {
+                margin-top: 40px;
+                font-size: 28px;
+            }
+
+            .input-holder {
+                width: 450px;
+            }
+
+            .login-button {
+                width: 450px;
+                height: 60px;
+            }
+        }
 
         
     </style>
     <script>
-    function togglePassword() {
-        const passwordInput = document.getElementById('passwordInput');
-        const eyeIcon = document.getElementById('eyeIcon');
-        
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            eyeIcon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>';
-        } else {
-            passwordInput.type = 'password';
-            eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
+        function togglePassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line>';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>';
+            }
         }
-    }
-
 
         const targetDate = new Date("2026-01-26T09:00:00").getTime(); 
 
@@ -205,40 +271,37 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
-
-</script>
+    </script>
 </head>
 <body>
-
     <div class="div-1">
-
         <div class="div-1-1">
             <img src="assets/logo/Vector.svg" alt="Logo" class="logo">
-             <h1 class="main-title">Deerwalk MUN <span>3.0</span></h1>
+            <h1 class="main-title">Deerwalk MUN <span>3.0</span></h1>
 
-         <div class="counter__container">
-        <div class="timing__container">
-            <div class="timing__box">
-                <div class="timing__box__number" id="days">00</div>
-                <div class="timing__box__text">Days</div>
-        </div>
-        <div class="timing__box__colon">:</div>
-           <div class="timing__box">
-             <div class="timing__box__number" id="hours">00</div>
-                <div class="timing__box__text">Hours</div>
-        </div>
-        <div class="timing__box__colon">:</div>
-            <div class="timing__box">
-                <div class="timing__box__number" id="minutes">00</div>
-            <div class="timing__box__text">Minutes</div>
-        </div>
-        <div class="timing__box__colon">:</div>
-        <div class="timing__box">
-            <div class="timing__box__number" id="seconds">00</div>
-            <div class="timing__box__text">Seconds</div>
-        </div>
-        </div>
-    </div>
+            <div class="counter__container">
+                <div class="timing__container">
+                    <div class="timing__box">
+                        <div class="timing__box__number" id="days">00</div>
+                        <div class="timing__box__text">Days</div>
+                    </div>
+                    <div class="timing__box__colon">:</div>
+                    <div class="timing__box">
+                        <div class="timing__box__number" id="hours">00</div>
+                        <div class="timing__box__text">Hours</div>
+                    </div>
+                    <div class="timing__box__colon">:</div>
+                    <div class="timing__box">
+                        <div class="timing__box__number" id="minutes">00</div>
+                        <div class="timing__box__text">Minutes</div>
+                    </div>
+                    <div class="timing__box__colon">:</div>
+                    <div class="timing__box">
+                        <div class="timing__box__number" id="seconds">00</div>
+                        <div class="timing__box__text">Seconds</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="div-1-2">
@@ -246,26 +309,22 @@
             <br><br>
             <div class="input-fields">
                 <label style="font-size: 20px; color:#236AAC;">Username</label>
-                <input type="text" class="input-holder"></input>
+                <input type="text" class="input-holder">
                 <br>
-               <label style="font-size: 20px; color:#236AAC;">Password</label>
+                <label style="font-size: 20px; color:#236AAC;">Password</label>
                 <div style="position: relative;">
                     <input type="password" class="input-holder" id="passwordInput">
-                        <button type="button" class="eye-button" onclick="togglePassword()">
+                    <button type="button" class="eye-button" onclick="togglePassword()">
                         <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#236AAC" stroke-width="2">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
                         </svg>
-                        </button>
+                    </button>
                 </div>
 
                 <div class="login-button">Login</div>
             </div>
-            
-
         </div>
-
     </div>
-   
 </body>
 </html>
