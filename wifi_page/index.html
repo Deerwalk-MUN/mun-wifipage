@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <title>MUN 3.0</title>
     <style>
         @font-face {
-               font-family: 'Cabinet_Grotesk';
+            font-family: 'Cabinet_Grotesk';
             src: url('assets/fonts/Cabinet_Grotesk/CabinetGrotesk-Variable.woff2') format('woff2');
             font-weight: 100 900;
-                  font-style: normal;
+            font-style: normal;
         }
         
         * {
             margin: 0;
-               padding: 0;
-              box-sizing: border-box;
+            padding: 0;
+            box-sizing: border-box;
         }   
 
         body {
@@ -44,10 +40,10 @@
                 #38A3DB 24%,
                 #236AAC 64%,
                 #236AAC 78%
-             );
+            );
             flex: 1.15;
             display: flex;
-              align-items: center;
+            align-items: center;
             flex-direction: column;
         }
 
@@ -106,26 +102,26 @@
             justify-content: center;
             align-items: center;
             border: solid;
-                border-color: #38A3DB;
+            border-color: #38A3DB;
             cursor: pointer;
         }
 
         .login-button:hover {
             background-color: #F6C900;
-               color: black;
+            color: black;
             transition: 0.6s ease;
-                   border-color: black;
+            border-color: black;
         }
 
         .eye-button {
             position: absolute;
             right: 10px;
-               top: 50%;
+            top: 50%;
             transform: translateY(-50%);
             background: none;
             border: none;
             cursor: pointer;
-                    padding: 5px;
+            padding: 5px;
         }
 
         .eye-button:hover {
@@ -134,7 +130,7 @@
 
         .counter__container {
             display: flex;
-                flex-direction: column;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin-top: 50px;
@@ -143,13 +139,13 @@
         .timing__container {
             display: flex;
             flex-direction: row;
-              align-items: center;
+            align-items: center;
             gap: 20px;
         }
 
         .timing__box {
-                display: flex;
-                flex-direction: column;
+            display: flex;
+            flex-direction: column;
             align-items: center;
         }
 
@@ -171,16 +167,7 @@
             color: white;
             margin-bottom: 30px;
         }
-        .input-fields {
-            display: flex;
-            flex-direction: column;
-        }
 
-        .input-fields button {
-            outline: none;
-        }
-
-        
         @media (max-width: 1024px) {
             .div-1 {
                 flex-direction: column;
@@ -238,11 +225,11 @@
                 width: 450px;
                 height: 60px;
             }
+        }
 
-            @media (max-width: 767px) {
+        @media (max-width: 767px) {
             .div-1 {
                 flex-direction: column;
-                
             }
 
             .div-1-1 {
@@ -319,13 +306,9 @@
             }
         }
 
-        
-
-
         @media (max-width: 480px) {
-
             .div-1-1{   
-                     min-height: 30vh;
+                min-height: 30vh;
             }
             .div-1-2{
                 min-height: 70vh;
@@ -348,8 +331,8 @@
                 font-size: 10px;
             }
 
-                .timing__box__colon {
-                    font-size: 20px;
+            .timing__box__colon {
+                font-size: 20px;
             }
 
             .login-title {
@@ -359,7 +342,6 @@
 
             .input-fields {
                 max-width: 320px;
-                
             }
 
             .input-holder {
@@ -374,12 +356,9 @@
                 font-size: 16px;
             }
         }
-        }
-
-        
     </style>
     <script>
-            function togglePassword() {
+        function togglePassword() {
             const passwordInput = document.getElementById('passwordInput');
             const eyeIcon = document.getElementById('eyeIcon');
             
@@ -396,12 +375,12 @@
 
         const updateCountdown = () => {
             const now = new Date().getTime();
-                const timeRemaining = targetDate - now;
+            const timeRemaining = targetDate - now;
             
             if (timeRemaining <= 0) {
                 document.getElementById('days').textContent = '00';
-                     document.getElementById('hours').textContent = '00';
-                     document.getElementById('minutes').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
                 document.getElementById('seconds').textContent = '00';
             } else {
                 const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
@@ -410,9 +389,9 @@
                 const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
                 document.getElementById('days').textContent = days < 10 ? `0${days}` : days;
-                     document.getElementById('hours').textContent = hours < 10 ? `0${hours}` : hours;
+                document.getElementById('hours').textContent = hours < 10 ? `0${hours}` : hours;
                 document.getElementById('minutes').textContent = minutes < 10 ? `0${minutes}` : minutes;
-                 document.getElementById('seconds').textContent = seconds < 10 ? `0${seconds}` : seconds;
+                document.getElementById('seconds').textContent = seconds < 10 ? `0${seconds}` : seconds;
             }
         };
 
@@ -423,12 +402,12 @@
 <body>
     <div class="div-1">
         <div class="div-1-1">
-            <img src="assets/logo/Vector.svg" alt="Logo" class="logo">
+            <img src="assets/logo/Vector.png" alt="Logo" class="logo">
             <h1 class="main-title">Deerwalk MUN <span>3.0</span></h1>
                 
-                <div class="counter__container">
+            <div class="counter__container">
                 <div class="timing__container">
-                     <div class="timing__box">
+                    <div class="timing__box">
                         <div class="timing__box__number" id="days">00</div>
                         <div class="timing__box__text">Days</div>
                     </div>
@@ -443,7 +422,7 @@
                         <div class="timing__box__text">Minutes</div>
                     </div>
                     <div class="timing__box__colon">:</div>
-                     <div class="timing__box">
+                    <div class="timing__box">
                         <div class="timing__box__number" id="seconds">00</div>
                         <div class="timing__box__text">Seconds</div>
                     </div>
@@ -452,44 +431,49 @@
         </div>
 
         <div class="div-1-2">
-                <h1 class="login-title">Connect To WiFi</h1>
-                   <br><br>
-           <form class="input-fields">
-    <label style="font-size: 20px; color:#236AAC;">Username</label>
-    <input
-        type="text"
-        class="input-holder"
-        name="username"
-        required
-        autocomplete="username"
-        aria-label="Username"
-    >
+            <h1 class="login-title">Connect To WiFi</h1>
+            <br><br>
+            <form class="input-fields" action="%%AUTH_POST_URL%%" method="post">
+               
+                <input type="hidden" name="%%REDIRID%%" value="%%PROTURI%%">
+                <input type="hidden" name="%%MAGICID%%" value="%%MAGICVAL%%">
+                
+                <label style="font-size: 20px; color:#236AAC;">Username</label>
+                <input
+                    type="text"
+                    class="input-holder"
+                    name="%%USERNAMEID%%"
+                    required
+                    autocorrect="off"
+                    autocapitalize="off"
+                    aria-label="Username"
+                >
 
-    <br>
+                <br>
 
-    <label style="font-size: 20px; color:#236AAC;">Password</label>
-    <div style="position: relative;">
-        <input
-            type="password"
-            class="input-holder"
-            id="passwordInput"
-            name="password"
-            required
-            autocomplete="current-password"
-            aria-label="Password"
-        >
-        <button type="button" class="eye-button" onclick="togglePassword()" aria-label="Toggle password visibility">
-            <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#236AAC" stroke-width="2">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-            </svg>
-        </button>
-    </div>
+                <label style="font-size: 20px; color:#236AAC;">Password</label>
+                <div style="position: relative;">
+                    <input
+                        type="password"
+                        class="input-holder"
+                        id="passwordInput"
+                        name="%%PASSWORDID%%"
+                        required
+                        autocomplete="off"
+                        aria-label="Password"
+                    >
+                    <button type="button" class="eye-button" onclick="togglePassword()" aria-label="Toggle password visibility">
+                        <svg id="eyeIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#236AAC" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </button>
+                </div>
 
-    <button class="login-button" type="submit" aria-label="Login">
-        Login
-    </button>
-</form>
+                <button class="login-button" type="submit" aria-label="Login">
+                    Login
+                </button>
+            </form>
         </div>
     </div>
 </body>
